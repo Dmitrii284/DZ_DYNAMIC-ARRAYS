@@ -20,12 +20,10 @@ void show_mass(T* arr, const int length) {
 }
 //Task 2
 
-void resize_arr(int *arr, int size1, int size2) {
-	if (size2 <= 0)
-		return;
-		int	*tmp = new int [size1 = size2];
+void resize_arr(int *&arr, int size1, int size2) {
+		int* tmp = new int [size2] {};
 		for (int i = 0; i < size1; i++)
-			tmp[i] = arr[i];
+			*(tmp +i) = *(arr +i);
 		    delete[] arr;
 			arr = tmp;
 }
@@ -63,10 +61,10 @@ int main() {
 
 	//Task 2
 	std::cout << "Enter the Primary saize array ->";
-	std::cin >> n>>m;
+	std::cin >> n;
 	int* array = new int[n];
 	
-	std::cout << "\nD array: \n";
+	std::cout << "\nPrimary array: ";
 	fill_arr(array, n, 10, 47);
 	std::cout << "\n";
 	show_mass(array, n);
@@ -75,12 +73,13 @@ int main() {
 	std::cout << "Enter the change in the length of the second array ->";
 	std::cin >> m;
 
-	std::cout << "Outputting data to an array: \n";
+	std::cout << "\nOutput array of new length: \n";
 	
-	/*resize_arr(D, n, m);
-	for(int i = 0;i<size)
-	show_mass(D, n);
-	*/
+	resize_arr(array, n, m);
+	std::cout << '[';
+	for (int i = 0; i < m; i++)
+		std::cout << *(array + i) << ", ";
+	std::cout<<"\b\b]\n" << std::endl;
 
 
 	return 0;
