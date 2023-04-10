@@ -4,7 +4,7 @@
 #include <algorithm> // функция  stor  Быстрая сортировка std::sort(arr, arr + size);  
 // функцию swap Сортировка через сравнениемассивов std::swap(arr[j], arr[j + 1]);
 
-
+	//Task 1
 template <typename T>
 void fill_arr(T arr[], const int length, T max, T min) {	
 	srand(time(NULL));
@@ -18,13 +18,24 @@ void show_mass(T* arr, const int length) {
 		std::cout << *(arr + i) << ", ";
 	std::cout << "\b\b]\n";
 }
+//Task 2
+
+void resize_arr(int *arr, int size1, int size2) {
+	if (size2 <= 0)
+		return;
+		int	*tmp = new int [size1 = size2];
+		for (int i = 0; i < size1; i++)
+			tmp[i] = arr[i];
+		    delete[] arr;
+			arr = tmp;
+}
 
 
 int main() {
 	setlocale(LC_ALL, "Rus");
-
+	//Task 1
 	int n, m;
-	std::cout << "Inter the saize arrays ->";
+	/*std::cout << "Inter the saize arrays ->";
 	std::cin >> n >> m;
 	int* A = new int[n];
 	int* B = new int[m];
@@ -48,7 +59,25 @@ int main() {
 	std::cout << "C array: \n";
 	show_mass(C, n + m);
 	delete[] A;
-	delete[] B;
+	delete[] B;*/
+
+	//Task 2
+	std::cout << "Inter the saize arrays ->";
+	std::cin >> n >> m;
+	int* D = new int[n];
+	
+	std::cout << "\nD array: \n";
+	fill_arr(D, n, 10, 47);
+	std::cout << "\n";
+	show_mass(D, n);	
+	std::cout << "\n";
+
+	std::cout << "Outputting data to an array: \n";
+	//int* C = new int[m];	
+	resize_arr(D, n, m);
+	show_mass(D, m);
+	
+
 
 	return 0;
 }
