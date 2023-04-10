@@ -62,21 +62,25 @@ int main() {
 	delete[] B;*/
 
 	//Task 2
-	std::cout << "Inter the saize arrays ->";
-	std::cin >> n >> m;
-	int* D = new int[n];
+	std::cout << "Enter the Primary saize array ->";
+	std::cin >> n>>m;
+	int* array = new int[n];
 	
 	std::cout << "\nD array: \n";
-	fill_arr(D, n, 10, 47);
+	fill_arr(array, n, 10, 47);
 	std::cout << "\n";
-	show_mass(D, n);	
+	show_mass(array, n);
 	std::cout << "\n";
 
+	std::cout << "Enter the change in the length of the second array ->";
+	std::cin >> m;
+
 	std::cout << "Outputting data to an array: \n";
-	//int* C = new int[m];	
-	resize_arr(D, n, m);
-	show_mass(D, m);
 	
+	/*resize_arr(D, n, m);
+	for(int i = 0;i<size)
+	show_mass(D, n);
+	*/
 
 
 	return 0;
