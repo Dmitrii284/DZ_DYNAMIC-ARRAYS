@@ -33,18 +33,16 @@ int main() {
 	setlocale(LC_ALL, "Rus");
 	//Task 1
 	int n, m;
-	/*std::cout << "Inter the saize arrays ->";
+	std::cout << "\nTask 2.\nInter the saize arrays ->";
 	std::cin >> n >> m;
 	int* A = new int[n];
 	int* B = new int[m];
 		
 	std::cout << "\nA array: \n";
-	fill_arr(A, n, 10, 47);
-	std::cout << "\n\n";
+	fill_arr(A, n, 10, 47);	
 	show_mass(A, n);
 	std::cout << "\nB array: \n";
-	fill_arr(B, m, 30, 95);
-	std::cout << "\n";
+	fill_arr(B, m, 30, 95);	
 	show_mass(B, m);
 	std::cout << std::endl;
 
@@ -57,23 +55,23 @@ int main() {
 	std::cout << "C array: \n";
 	show_mass(C, n + m);
 	delete[] A;
-	delete[] B;*/
+	delete[] B;
 
 	//Task 2
-	std::cout << "Enter the Primary saize array ->";
+	std::cout << "\nTask 2.\nEnter the Primary saize array ->";
 	std::cin >> n;
 	int* array = new int[n];
 	
-	std::cout << "\nPrimary array: ";
+	std::cout << "Primary array: ";
 	fill_arr(array, n, 10, 47);
 	std::cout << "\n";
 	show_mass(array, n);
-	std::cout << "\n";
+	std::cout << "\n\n";
 
 	std::cout << "Enter the change in the length of the second array ->";
 	std::cin >> m;
 
-	std::cout << "\nOutput array of new length: \n";
+	std::cout << "Output array of new length: \n";
 	
 	resize_arr(array, n, m);
 	std::cout << '[';
